@@ -4,11 +4,12 @@ import './App.css';
 
 class App extends Component {
   state = {
-    text: ""
+    value: ""
   }
 
   handleChange = (event) => {
-    this.setState({text: event.target.value})
+    console.log(event)
+    this.setState({value: event.target.value})
   }
 
   render() {
@@ -19,9 +20,9 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         <div className="container">
-          <input type="text" placeholder="Say Something" onChange={this.handleChange}/>
+          <input type="text" placeholder="Say Something" value ={this.state.value} onChange={this.handleChange}/>
           <p className="echo">Echo:</p>
-          <p>{this.state.text}</p>
+          <p>{this.state.value}</p>
         </div>
       </div>
     );
